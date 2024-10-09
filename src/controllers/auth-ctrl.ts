@@ -10,6 +10,8 @@ export const getUserData: Direction = async (req, res) => {
 
 export const postGoogle: Direction = async (req, res) => {
 	try {
+		console.log(GOOGLE_URI + req.query.code);
+
 		const data: IKeys<string> = await axios({
 			method: 'POST',
 			url: GOOGLE_URI + `${req.query.code}`
